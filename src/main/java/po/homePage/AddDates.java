@@ -12,12 +12,12 @@ public class AddDates {
     JavascriptExecutor js;
     private String url;
     //попробовать через css жирный шрифт и отсчитать 7 дней
-    @FindBy(xpath = "//button[@tabindex='0'][contains(@class,'bg-bg-alt font-bold')]")
-    private WebElement startDate;
-    @FindBy(xpath = "//button[@tabindex='0'][contains(@class,'ring-1 focus:ring-1 font-bold')]//following::td[7]")
-    private WebElement endDate;
+    @FindBy(xpath = "//button[@tabindex='0'][contains(@class,'bg-bg-alt font-bold')]//following::td[1]")
+    private WebElement buttonStartDateLocator;
+    @FindBy(xpath = "//button[@tabindex='0'][contains(@class,'bg-bg-alt font-bold')]//following::td[8]")
+    private WebElement buttonEndDateLocator;
     @FindBy(xpath = "//button[@class='btn btn-primary-text btn-lg absolute right-0 top-0 rtl:left-0 rtl:right-auto']")
-    private WebElement closeButton;
+    private WebElement buttonCloseLocator;
 
     public AddDates() {
         this.driver = Singleton.getDriver();
@@ -25,18 +25,18 @@ public class AddDates {
         js = (JavascriptExecutor) driver;
     }
 
-    public HomePage startDateClick() {
-        startDate.click();
-        return new HomePage();
+    public AddDates startDateClick() {
+        buttonStartDateLocator.click();
+        return new AddDates();
     }
 
-    public HomePage endDateClick(){
-        endDate.click();
-        return new HomePage();
+    public AddDates endDateClick(){
+        buttonEndDateLocator.click();
+        return new AddDates();
     }
 
-    public HomePage closeButtonClick(){
-        closeButton.click();
+    public HomePage buttonCloseDateClick(){
+        buttonCloseLocator.click();
         return new HomePage();
     }
 
