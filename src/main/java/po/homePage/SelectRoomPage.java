@@ -6,9 +6,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import singleton.Singleton;
 
+import java.util.List;
+
 public class SelectRoomPage {
     WebDriver driver;
-    @FindBy
+    @FindBy(xpath = "//button[@data-testid='moreRatesButton']")
     WebElement buttonBookFromLocator;
 
     public SelectRoomPage() {
@@ -16,7 +18,8 @@ public class SelectRoomPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void ButtonBookFromClick(){
+    public UpdateYourRatePage buttonBookFromClick() {
         buttonBookFromLocator.click();
+        return new UpdateYourRatePage();
     }
 }

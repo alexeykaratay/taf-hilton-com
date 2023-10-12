@@ -2,16 +2,12 @@ package po;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import po.homePage.SelectRoomPage;
 import singleton.Singleton;
 import util.Waiters;
 
-import java.time.Duration;
 import java.util.List;
 
 public class HotelsInWashingtonDcPage {
@@ -34,7 +30,7 @@ public class HotelsInWashingtonDcPage {
     }
 
     public SelectRoomPage buttonViewRatesClick() {
-        Waiters.waitFor(2);
+        Waiters.waitFor(3);
         buttonViewRatesLocator.get(0).click();
         return new SelectRoomPage();
     }

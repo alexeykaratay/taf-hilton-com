@@ -4,7 +4,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import po.homePage.HomePage;
 import po.homePage.SelectRoomPage;
-import singleton.Singleton;
 import util.SwitchingTabs;
 import util.Waiters;
 
@@ -23,8 +22,10 @@ public class TestUi extends BaseTest {
                 .buttonRoomsAndGuestsPlusAdultsClick()
                 .buttonRoomsAndGuestsCloseClick()
                 .buttonFindAHotelClick()
-                .getTextAddHotelsWashingtonDc()
-                .buttonViewRatesClick();
+                .getTextAddHotelsWashingtonDc();
+        SwitchingTabs.switchingTabs();
+        SelectRoomPage selectRoomPage = new SelectRoomPage();
+        selectRoomPage.buttonBookFromClick();
         Waiters.waitFor(5);
     }
 }
