@@ -1,6 +1,5 @@
 package po.homePage;
 
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,7 +10,6 @@ import util.Waiters;
 
 public class HomePage {
     private WebDriver driver;
-    JavascriptExecutor js;
     private String url = "https://www.hilton.com/en/";
     private String textInputInWhereTo = "Washington, District of Columbia, US";
     @FindBy(xpath = "//input[@aria-label='Where to?. Begin typing to filter results.']")
@@ -27,7 +25,6 @@ public class HomePage {
     public HomePage() {
         this.driver = Singleton.getDriver();
         PageFactory.initElements(driver, this);
-        js = (JavascriptExecutor) driver;
     }
 
     public HomePage openHomePage() {

@@ -1,12 +1,12 @@
 package po.homePage;
 
+import org.openqa.selenium.JavascriptException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import singleton.Singleton;
-
-import java.util.List;
+import util.Waiters;
 
 public class SelectRoomPage {
     WebDriver driver;
@@ -19,6 +19,7 @@ public class SelectRoomPage {
     }
 
     public UpdateYourRatePage buttonBookFromClick() {
+        Waiters.waitFor(2);
         buttonBookFromLocator.click();
         return new UpdateYourRatePage();
     }

@@ -24,13 +24,13 @@ public class HotelsInWashingtonDcPage {
         PageFactory.initElements(driver, this);
     }
 
-    public HotelsInWashingtonDcPage getTextAddHotelsWashingtonDc() {
-        System.out.println(selectHotelsAddLocator.get(0).getText());
+    public HotelsInWashingtonDcPage PrintTextAddHotelsWashingtonDc() {
+        System.out.println("Hotel: " + selectHotelsAddLocator.get(0).getText());
         return new HotelsInWashingtonDcPage();
     }
 
     public SelectRoomPage buttonViewRatesClick() {
-        Waiters.waitFor(3);
+        Waiters.waitFor(1);
         buttonViewRatesLocator.get(0).click();
         return new SelectRoomPage();
     }
